@@ -11,7 +11,7 @@ export async function POST(request: Request): Promise<Response> {
   try {
     // 1. Parse the request JSON
     const body = await request.json();
-
+    console.log("Request Body:", body);
     // 2. Validate email address
     const emailValidation = EmailSchema.safeParse(body.email);
     if (!emailValidation.success) {
@@ -39,10 +39,11 @@ export async function POST(request: Request): Promise<Response> {
     const options = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `api_key ${API_KEY}`,
+        Authorization: `apikey ${API_KEY}`,
       },
     };
-
+    // console.log("Mailchimp URL:", url);
+    // console.log("Headers:", options.headers);
     // 7. Send POST request to Mailchimp API
     const response = await axios.post(url, data, options);
 
@@ -53,12 +54,18 @@ export async function POST(request: Request): Promise<Response> {
       );
     }
   } catch (error) {
+    console.error("Error Occurred:", error); // Log the full error object
     if (axios.isAxiosError(error)) {
-      console.error(
-        `${error.response?.status}`,
-        `${error.response?.data.title}`,
-        `${error.response?.data.detail}`
-      );
+      console.error("Axios Error Details:", error.toJSON());
+      console.error("Response Data:", error.response?.data);
+      console.error("Status Code:", error.response?.status);
+      console.error("Headers:", error.response?.headers);
+
+      // console.error(
+      //   `${error.response?.status}`,
+      //   `${error.response?.data.title}`,
+      //   `${error.response?.data.detail}`
+      // );
 
       if (error.response?.data.title === "Member Exists") {
         return new Response(
@@ -83,4 +90,5 @@ export async function POST(request: Request): Promise<Response> {
     JSON.stringify({ error: "Unexpected error occurred." }),
     { status: 500, headers: { "Content-Type": "application/json" } }
   );
+
 }
