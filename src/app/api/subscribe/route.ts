@@ -11,7 +11,7 @@ export async function POST(request: Request): Promise<Response> {
   try {
     // 1. Parse the request JSON
     const body = await request.json();
-    console.log("Request Body:", body);
+    // console.log("Request Body:", body);
     // 2. Validate email address
     const emailValidation = EmailSchema.safeParse(body.email);
     if (!emailValidation.success) {

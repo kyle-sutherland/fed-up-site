@@ -8,7 +8,7 @@ export default function Home () {
   return (<main className="min-h-screen bg-lime-300 py-10">
     <div className="container items-center mx-auto px-4 max-w-6xl">
       <Header/>
-      {/*<Fade cascade duration={1200} damping={0.1} fraction={0.1}>*/}
+      <Fade cascade duration={1200} damping={0.1} fraction={0.1}>
       {/* About the Campaign */}
       <section className="section">
         <div className="section-title">
@@ -228,7 +228,7 @@ export default function Home () {
           Get Involved Today
         </a>
       </section>
-      {/*</Fade>*/}
+      </Fade>
     </div>
   </main>)
 }
