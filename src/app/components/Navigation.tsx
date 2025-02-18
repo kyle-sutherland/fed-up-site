@@ -64,7 +64,7 @@ export default function Navigation() {
               <Link
                 key={item.route}
                 href={item.route}
-                className="hover:text-green-500 transition-colors"
+                className="hover:text-primary transition-colors"
               >
                 {item.name.valueOf()}
               </Link>
@@ -96,9 +96,15 @@ export default function Navigation() {
           ref={menuRef}
           className="md:hidden px-4 py-2 space-y-4 bg-black/90"
         >
-          {navItems.map((item)=>(<Link key={item.route} href={item.route} className="block hover:text-green-500">
-            {item.name.valueOf()}
-          </Link>))}
+          {navItems.map((item) => (
+            <Link
+              key={item.route}
+              href={item.route}
+              className="block hover:text-primary"
+            >
+              {item.name.valueOf()}
+            </Link>
+          ))}
         </div>
       )}
     </nav>

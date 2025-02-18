@@ -21,7 +21,20 @@
   animation: fadeIn 1s ease-out forwards;
 }
 
+.header-image {
+  margin-left: 28px;
+}
 /* Reusable Style Utilities */
+
+@theme {
+  --color-fu-green: #92c967;
+  --color-fu-purple: #5a0e32;
+  --color-fu-orange: #e78c3c;
+}
+
+.main-body {
+  background-color: #92c967;
+}
 
 /* For Section Styling */
 .section {
@@ -30,23 +43,31 @@
 
 /* Styles for Titles (e.g., Section Headings) */
 .section-title {
-  @apply text-3xl font-bold text-yellow-400 mt-4  bg-pink-950 p-6 rounded-t-lg shadow-lg;
+  @apply text-3xl font-bold p-6 rounded-t-lg shadow-lg;
+  background-color: #5a0e32;
+  color: #e78c3c;
 }
 
 /* Paragraph Styles */
 .paragraph {
-  @apply text-xl text-pink-950 mb-4 lg:px-24;
+  @apply text-xl mb-4 lg:px-24;
 }
 
 /* Styles for Lists */
 .list {
-  @apply text-xl list-disc list-inside text-pink-950 mb-4 px-12 md:px-24 lg:px-40;
+  @apply text-xl list-disc list-inside mb-4 px-12 md:px-24 lg:px-40;
 }
 
 .content-card {
-  @apply bg-lime-300 shadow-lg rounded-b-lg p-6;
+  @apply shadow-lg rounded-b-lg p-6;
+  background-color: #92c967;
+}
+.vision-card {
+  background-color: #92c967;
 }
 
 .button {
-  @apply text-xl px-6 py-2 bg-pink-950 text-yellow-400 rounded-lg hover:bg-pink-900 focus:outline-none focus:ring-2 focus:ring-pink-500;
+  @apply text-xl px-6 py-2 rounded focus:outline-none focus:ring-2 focus:ring-pink-500;
+  background-color: #5a0e32;
+  color: #e78c3c;
 }

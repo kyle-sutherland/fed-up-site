@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-lime-200 py-10">
+    <main className="min-h-screen main-body py-10">
       <div className="container items-center mx-auto px-4 max-w-6xl">
         <Header />
         <Fade cascade duration={1200} damping={0.1} fraction={0.1}>
@@ -45,7 +45,7 @@ export default function Home() {
             <div className={"content-card"}>
               <p className="paragraph">
                 Aramark has a history of using prison labor, providing
-                poor-quality food, and ignoring student concerns. Concordia
+                poor-quality food, and ignoring student concerns. Our community
                 deserves better!
               </p>
               <p className="paragraph">
@@ -78,37 +78,6 @@ export default function Home() {
                 These issues are unacceptable, and we’re fighting to replace
                 Aramark with a better alternative.
               </p>
-            </div>
-          </section>
-
-          {/* Our Vision */}
-          <section className="section">
-            <div className="section-title">
-              <h2>Our Vision</h2>
-            </div>
-            <div className={"bg-lime-300 shadow-lg py-6"}>
-              <p className="paragraph">We envision a campus where:</p>
-              <ul className="list">
-                <li>Food is fresh, nutritious, and sustainably sourced.</li>
-                <li>Students have a say in how food services are run.</li>
-                <li>Local businesses and cooperatives are supported.</li>
-                <li>No one has to choose between affordability and quality.</li>
-              </ul>
-              <p className="paragraph">
-                Together, we can make this vision a reality. Learn more about{" "}
-                <Link href={"https://equi-table.ca/"}>
-                  Equi-table Consortium
-                </Link>
-                , an alternative for the future of food services on campus.
-              </p>
-            </div>
-            <div className="relative h-[400px] rounded-b-lg shadow-lg">
-              <Image
-                src={"/vegetables-1085063_1280.jpg"}
-                alt={"vegetables"}
-                fill
-                className="object-cover rounded-b-lg"
-              />
             </div>
           </section>
 
@@ -206,6 +175,37 @@ export default function Home() {
                 Together, we can create a campus food system that works for
                 everyone.
               </p>
+            </div>
+          </section>
+
+          {/* Our Vision */}
+          <section className="section">
+            <div className="section-title">
+              <h2>Our Vision</h2>
+            </div>
+            <div className={"bg-primary vision-card shadow-lg py-6"}>
+              <p className="paragraph">We envision a campus where:</p>
+              <ul className="list">
+                <li>Food is fresh, nutritious, and sustainably sourced.</li>
+                <li>Students have a say in how food services are run.</li>
+                <li>Local businesses and cooperatives are supported.</li>
+                <li>No one has to choose between affordability and quality.</li>
+              </ul>
+              <p className="paragraph">
+                Together, we can make this vision a reality. Learn more about{" "}
+                <Link href={"https://equi-table.ca/"}>
+                  Equi-table Consortium
+                </Link>
+                , an alternative for the future of food services on campus.
+              </p>
+            </div>
+            <div className="relative h-[400px] rounded-b-lg shadow-lg">
+              <Image
+                src={"/vegetables-1085063_1280.jpg"}
+                alt={"vegetables"}
+                fill
+                className="object-cover rounded-b-lg"
+              />
             </div>
           </section>
 
